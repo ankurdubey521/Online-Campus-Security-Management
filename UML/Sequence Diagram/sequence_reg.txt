@@ -1,0 +1,43 @@
+@startuml
+skinparam sequenceArrowThickness 2
+skinparam roundcorner 20
+skinparam maxmessagesize 60
+skinparam sequenceParticipant underline
+
+skinparam sequence {
+	ArrowColor black
+	LifeLineBorderColor black
+	LifeLineBackgroundColor black
+}
+
+
+
+actor user
+participant "System" as A
+participant "System database" as B
+participant " user profile data" as C
+activate user
+user -> A: register request()
+activate A
+
+A -->user:request personal detail
+deactivate A
+user ->A:personal details
+activate A
+A ->B:putting data
+activate B
+B ->C:updating data
+activate C
+C-->B:successfully updated
+deactivate C
+B-->A:response
+deactivate B
+A-->user:user profile
+deactivate A
+deactivate user
+
+@enduml
+
+
+
+

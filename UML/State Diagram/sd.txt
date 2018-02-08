@@ -1,0 +1,18 @@
+@startuml
+[*] --> Checking_username:Enter username and password
+Checking_username : do check username from database
+Checking_username-->Registered:username is available
+Checking_username-->Error:username is not available
+Error-->[*]
+Checking_username-->Checking_username:get new username
+Registered-->logged_in:enter login details
+logged_in-->Requesting_leave_or_overduty
+Requesting_leave_or_overduty-->logged_out:logging out
+logged_in-->Viewing_routine
+Viewing_routine-->logged_out:logging out
+logged_in-->Viewing_salary
+Viewing_salary-->logged_out:logging out
+logged_out --> [*]
+
+@enduml
+

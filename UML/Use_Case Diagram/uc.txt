@@ -1,0 +1,26 @@
+@startuml
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor Employee
+actor Manager
+rectangle Online_campus_security_management_system{
+Employee -- (Registration)
+(Registration)--Manager
+Employee -- (Login)
+(Login)--Manager
+Employee -- (Request leave)
+(Request leave)--Manager
+Employee -- (Approve/Reject leave)
+(Approve/Reject leave)--Manager
+Employee -- (Salary)
+(Salary) -- Manager
+(Set routine) -- Manager
+Employee -- (view profile)
+(view profile) -- Manager
+(view profile) .> (view routine) : include
+(view profile) .> (view leaves) : include
+
+@enduml
+
+

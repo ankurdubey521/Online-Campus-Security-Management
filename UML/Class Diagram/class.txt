@@ -1,0 +1,56 @@
+@startuml
+class Employee {
+Password:string
+Gender:string
+Mobile:integer
+Employee_Id:string
+FullName:string
+LogIn()
+LogOut()
+ViewProfile()
+Request_leave_Or_Overduty()
+View_request_status()
+}
+class Profile{
+Name:String
+Id:Int
+Work History:String
+}
+class Routine{
+Place:String
+Date:Int
+Start Time:Int
+End Time:Int
+}
+class Leave{
+Remaining leave:Int
+Leave history:String
+}
+Class Salary{
+Salary:Int
+Prev. Salary:Int
+}
+Class Request_Status{
+Date:Int
+Status:String
+}
+class Manager{
+Password:string
+Gender:string
+Mobile:intiger
+Manager_Id:string
+FullName:string
+LogIn()
+LogOut()
+Create_Routine()
+View_Employee_Profile()
+Requests()
+}
+
+Employee "1"--"1"Profile:View profile
+Profile"1"--"1"Routine:View routine
+Profile"1"--"1"Leave:Remaining leaves
+Profile"1"--"1"Request_Status:Check status
+Profile"1"--"1"Salary:Check Salary
+Manager"1"--"1..*"Profile:Manage Employee
+@enduml

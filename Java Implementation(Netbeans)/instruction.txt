@@ -1,0 +1,51 @@
+
+First run selector.java(Run as the particular file).
+After that all classes are linked properly.
+In this use case i have shown the leave/overduty process.
+firstly employee send the leave/overduty request.Then manager will check his work history/remaining leaves and then respond to request.
+finally employee will check the request status.
+
+
+Selector:
+
+1.EMPLOYEE REGISTARTION
+First name is a string.
+Last name is a string.
+Employee ID is consist of digits.
+Age is string.
+Password(NO restriction).
+All fields are compulsory.
+
+2.EMPLOYEE LOGIN
+Enter Employee ID.
+Enter corresponding password.
+Both fields are compulsory.
+      1a.After logging in 
+          Employee could Request leave.
+          Employee could Request Overduty.
+          Employee could see Remaining leaves.
+          Employee could check Request Status.
+
+3.MANAGER REGISTARTION
+First name is a string.
+Last name is a string.
+Manager ID is consist of digits.
+Age is string.
+Password(NO restriction).
+All fields are compulsory.
+
+4.Enter Manager ID.
+Enter corresponding password.
+Both fields are compulsory.
+       4a.After logging in 
+          Manager could see  leave Requests .
+         Manager could see Overduty Requests .
+           Manager could approve or reject them.
+          Manager could see profile of any Employee.
+
+
+
+Thank you!
+
+
+

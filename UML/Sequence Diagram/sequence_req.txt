@@ -1,0 +1,59 @@
+@startuml
+skinparam sequenceArrowThickness 2
+skinparam roundcorner 20
+skinparam maxmessagesize 60
+skinparam sequenceParticipant underline
+
+skinparam sequence {
+	ArrowColor black
+	LifeLineBorderColor black
+	LifeLineBackgroundColor black
+}
+
+
+
+actor Employee
+participant "System1" as A
+participant "Request list" as B
+participant "Availability list" as C
+participant "Request status list" as D
+participant "System2" as E
+actor Manager
+
+activate Employee
+Employee -> A: LogIn request()
+activate A
+
+A -> B: Request Leave/Overduty()
+activate B
+Employee<-B:Response
+deactivate B
+
+activate Manager
+E <- Manager: LogIn request()
+activate E
+B <- E: checking Request List()
+activate B
+C <- B: checking Availability list
+activate C
+C<-C:Checking Availability
+activate C #708090
+C->D:Updating status
+deactivate C
+activate D
+D->Manager:Response
+deactivate D
+deactivate E
+
+
+A->D:Checking status()
+activate D
+Employee<-D:Response
+deactivate A
+deactivate D
+
+@enduml
+
+
+
+
